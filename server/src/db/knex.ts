@@ -1,7 +1,8 @@
-import { knex } from "knex";
+import knex from "knex";
 import dotenv from "dotenv";
 dotenv.config();
-export const db = knex({
+
+const db = knex({
   client: "pg",
   connection: {
     connectionString: process.env.DB_CONNECTION_URI,
@@ -10,3 +11,5 @@ export const db = knex({
     },
   },
 });
+
+export { db };
